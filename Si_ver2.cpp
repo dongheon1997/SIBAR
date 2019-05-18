@@ -4,6 +4,7 @@
 
 using namespace std;
 
+//결과 출력을 위한 정렬 함수//
 bool cmp(const vector<int>& a, const vector<int>& b)
 {
 	if (a[0] > b[0]) return 1;
@@ -13,6 +14,7 @@ bool cmp(const vector<int>& a, const vector<int>& b)
 
 int main()
 {
+	//시각 입력 받고 정렬//
 	int num;
 	cin >> num;
 
@@ -27,6 +29,9 @@ int main()
 
 	sort(times.begin(), times.end());
 	
+	
+
+	//시각 정보로 '이용자 수' 구간 생성//
 	num = 0;
 	temp = -1;
 
@@ -47,7 +52,10 @@ int main()
 			nums[nums.size() - 1][0] += times[i][1];
 		}
 	}
+	
 
+
+	//결과 출력을 위한 정렬 후 출력//
 	sort(nums.begin(), nums.end(), cmp);
 
 	int max = nums[0][0];
